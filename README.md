@@ -16,3 +16,8 @@ Due to GitHub size limitations, the full dataset (87MB) is available here:
 - GROUP BY & HAVING
 - Window Functions (DENSE_RANK)
 - Business Insight Extraction
+
+## 📊 Key Insights
+- Top customers generate major revenue.
+- Sales show seasonal pattern.
+- Some products drive the highest revenue share.
