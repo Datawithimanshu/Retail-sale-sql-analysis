@@ -1,0 +1,47 @@
+Basic SQL question
+
+1. How many total rows (transactions) are in the dataset?
+2. How many unique invoices are there?
+3. How many unique customers are there?
+4. How many unique products (Stock Code) are there?
+5. List all unique countries available in the dataset.
+6. How many total transactions are from the United Kingdom?
+7. How many rows have a NULL Customer id ?
+8. How many cancelled invoices are there? (Invoice No starts with 'C')
+9. Find the minimum, maximum, and average Quantity.
+10. Find the minimum, maximum, and average Unit Price.
+
+Intermediate SQL Questions
+
+11. Calculate the total revenue (Quantity * Unit Price).
+12. Calculate total revenue by country.
+13. Find the top 10 countries by total revenue.
+14. Find the top 10 products by total revenue.
+15. Find the top 10 products by total quantity sold.
+16. Find the top 10 customers by total revenue.
+17. Find the top 10 customers by number of invoices.
+
+Order Behavior
+18. Calculate the Average Order Value (AOV).
+19. Find the highest invoice value (maximum bill amount).
+20. Find the lowest invoice value (minimum bill amount).
+
+Intermediate SQL Questions (level two)
+
+21. Calculate total revenue by year.
+22. Calculate total revenue by month.
+23. Calculate the total number of invoices per month.
+24. Calculate total revenue per day (date only).
+25. Identify the peak sales month (highest revenue).
+26. Identify the peak sales day (highest revenue). 
+
+Advanced SQL— Window Functions And CTE
+
+27. Find the top product in each country using ranking.
+28. Find the top product in each country using ranking.
+29. Calculate running total revenue over time.
+30. Calculate month-over-month (MoM) revenue growth percentage.
+
+31. Rank customers based on total revenue.
+
+32. Calculate month-over-month (MoM) revenue growth percentage.ljjdd
