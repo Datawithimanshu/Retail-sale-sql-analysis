@@ -300,21 +300,20 @@ ORDER BY customer_rnk;
 -- THIS QUERY FIRST CALCULATE TOTAL REVENUE PER CUSTOMER USING A CTE, THEN APPLIS DENSE_RANK() TO RANK CUSTOMER BASED ON REVENUE IN DESCENDING ORDER. 
 
 -- 30) CALCUALTE MONTH-OVER-MONTH (MoM) REVENUE GROWTH PERCENTAGE
-
-	WITH monthly AS (
-    SELECT DATE_FORMAT(invoice_date, '%Y-%M') AS month,
-    SUM(quantity * unit_price) AS revenue
-    FROM retail_sale
-    WHERE invoice_no NOT LIKE 'C%'
-    AND quantity > 0
-    AND unit_price > 0
-    GROUP BY DATE_FORMAT(invoice_date, '%Y-%M')
-    )
-    SELECT month,
-    ROUND(revenue,2) AS revenue,
-    ROUND((revenue - LAG(REVENUE) OVER (ORDER BY month)) / LAG(revenue) OVER (ORDER BY month) * 100,2) AS mom_growth_percentage
-    FROM monthly
-    ORDER BY month;
+WITH monthly AS (
+SELECT DATE_FORMAT(invoice_date, '%Y-%M') AS month,
+SUM(quantity * unit_price) AS revenue
+FROM retail_sale
+WHERE invoice_no NOT LIKE 'C%'
+AND quantity > 0
+AND unit_price > 0
+GROUP BY DATE_FORMAT(invoice_date, '%Y-%M')
+ )
+SELECT month,
+ROUND(revenue,2) AS revenue,
+ROUND((revenue - LAG(REVENUE) OVER (ORDER BY month)) / LAG(revenue) OVER (ORDER BY month) * 100,2) AS mom_growth_percentage
+FROM monthly
+ORDER BY month;
 -- THIS QUERY CALCULATE MONTHLY REVENUE THEN MONTH OVER MONTH GROWTH PERCENTAGE USING THE LAG WINDOW FUNCTION TO ACCESS THE PREVIOUS MONTH'S REVENUE. 
 
 
